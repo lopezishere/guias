@@ -9,21 +9,21 @@ Finalmente, configuraremos el entorno para permitir construir tanto un instalabl
 
 ## Pasos a seguir
 
-1. Instalar NodeJS descargándolo de [su página web](https://nodejs.org)
+### Instalar NodeJS descargándolo de [su página web](https://nodejs.org)
 
-2. Abrimos una terminal de comandos e instalamos yarn de manera global utilizando npm
+### Abrimos una terminal de comandos e instalamos yarn de manera global utilizando npm
 ```
 npm install -g yarn
 ```
 Una vez instalado, comprobamos que todo ha ido correctamente con `yarn --version`
 
-3. Creamos la base de ReactJS con create-react-app sobre una nueva carpeta con el nombre de la aplicación
+### Creamos la base de ReactJS con create-react-app sobre una nueva carpeta con el nombre de la aplicación
 ```
 npx create-react-app miApp
 ```
 Una vez creada, entramos dentro de la carpeta con `cd miApp`
 
-4. Añadimos las dependencias del proyecto
+### Añadimos las dependencias del proyecto
 ```
 yarn add electron-is-dev
 yarn add electron electron-builder foreman --dev
@@ -31,7 +31,7 @@ yarn add electron electron-builder foreman --dev
 
 [Foreman](https://strongloop.github.io/node-foreman/) permitirá ejecutar la aplicación desde la línea de comandos. Será útil más adelante.
 
-5. Creamos el fichero principal de Electron en la ruta `public/electron.js` con el código del `main.js` de [electron-quick-start](https://github.com/electron/electron-quick-start)
+### Creamos el fichero principal de Electron en la ruta `public/electron.js` con el código del `main.js` de [electron-quick-start](https://github.com/electron/electron-quick-start)
 
 ```javascript
 const electron = require('electron');
@@ -98,7 +98,7 @@ mainWindow.loadURL(
 ```
 Si estamos en el entorno de desarrollo, se usará la URL contenida en la variable `process.env.ELECTRON_START_URL`, que apuntará al servidor de desarrollo de webpack. En otro caso, se apuntará al fichero `../build/index.html`, que será el resultado de la construcción del código ReactJS por parte de webpack.
 
-6. Configurar Foreman y las variables de entorno
+### Configurar Foreman y las variables de entorno
 
 Creamos el fichero `Procfile` en la raíz de nuestra aplicación, con el siguiente contenido
 ```
@@ -113,7 +113,7 @@ BROWSER=none
 ```
 Esto hará que cuando arranque el servidor de desarrollo, no se abra automáticamente en una pestaña del navegador, ya que el contenido se debe cargar desde Electron.
 
-7. Modificar el fichero `package.json`
+### Modificar el fichero `package.json`
 
 Primero, cambiamos la sección de `scripts` para dejarla así:
 ```json
@@ -152,7 +152,7 @@ Añadiremos también las siguientes etiquetas al fichero:
  * `homepage` permite que la aplicación cargue correctamente en Electron.
  * `main` indica en qué carpeta del proyecto se encuentra el script que Electron buscará para iniciar la aplicación.
 
-8. Crear el script de arranque en local de Electron en `src/start-electron.js` con el siguiente código.
+### Crear el script de arranque en local de Electron en `src/start-electron.js` con el siguiente código.
 ```javascript
 const net = require('net');
 const childProcess = require('child_process');
@@ -190,7 +190,7 @@ Básicamente, este script permite enlazar Electron con ReactJS cuando se arranca
 * Crea la variable `process.env.ELECTRON_START_URL` usada en la fucnión `mainWindow.LoadURL` del script `public/electron.js`
 * Si el puerto local ya está accesible, arranca Electron a través de la ejecución de `yarn electron`
 
-9. Configurar cómo se construirá la aplicación.
+### Configurar cómo se construirá la aplicación.
 Para ello, crearemos el fichero `electron-builder.yml` en la raíz de la aplicación, con el siguiente contenido:
 ```yml
 appId: prueba.react
