@@ -224,7 +224,7 @@ La ejecutaremos en local con `yarn start`, y si queremos construir los ejecutabl
 ¡Eso es todo! Gracias por llegar hasta aquí :grinning:
 
 ## Referencias
-Esta gúia no hubiese sido posible sin la ayuda de estas otras guías:
+Esta guía no hubiese sido posible sin la ayuda de estas otras guías:
 * [Añadiendo React A Una Aplicación De Electron](https://link.medium.com/2bHpzeWb58)
 * [Building an Electron application with create-react-app](https://www.freecodecamp.org/news/building-an-electron-application-with-create-react-app-97945861647c/)
 * [Create an app with Electron and React](https://flaviocopes.com/react-electron/)
