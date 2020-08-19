@@ -5,7 +5,7 @@ Para evitar configuraciones complejas, utilizaremos el proyecto create-react-app
 
 Sobre esta base, añadiremos los componentes de ElectronJS. 
 
-Finalmente, configuraremos el entorno para permitir construir tanto un instalable .exe y un portable de la aplicación.
+Finalmente, configuraremos el entorno para permitir construir tanto un instalable .exe como un portable de la aplicación, ambos para Windows.
 
 ## Pasos a seguir
 
